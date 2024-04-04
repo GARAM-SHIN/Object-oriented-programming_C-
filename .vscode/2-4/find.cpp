@@ -16,7 +16,7 @@ char& find(char a[], char c, bool& success){
 }
  
 int main() {
-    char s[] = "Mike";
+    char s[] = "mike";
     bool b = false;
     char& loc = find(s, 'M', b);
     if(b == false) {
