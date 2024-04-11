@@ -6,9 +6,9 @@
 using namespace std;    
 
 class Rectangle {   
-public:   
 	int width;   
 	int height;    
+public:   
 	Rectangle();    
 	Rectangle(int x, int y);    
 	Rectangle(int x);    

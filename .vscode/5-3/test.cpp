@@ -9,16 +9,10 @@ class MyVector{
 int *mem;
 int size;
 public:
-MyVector();
 MyVector(int n, int val);
 ~MyVector() { delete [] mem; }
 void show();
 };
-MyVector::MyVector() { 
-mem = new int [5]; 
-size = 5;
-for(int i=0; i<size; i++) mem[i] = 0;
-}
 MyVector::MyVector(int n, int val) { 
 mem = new int [n]; 
 size = n;
@@ -30,7 +24,7 @@ void MyVector::show() {
 }
 
 int main() {
-MyVector v1, v2(10, 2);
+MyVector v1(5,0), v2(10, 2);
 v1.show();
 v2.show();
 }
