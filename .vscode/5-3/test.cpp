@@ -9,7 +9,7 @@ class MyVector{
 int *mem;
 int size;
 public:
-MyVector(int n, int val);
+MyVector(int n=5, int val=0);
 ~MyVector() { delete [] mem; }
 void show();
 };
@@ -24,7 +24,7 @@ void MyVector::show() {
 }
 
 int main() {
-MyVector v1(5,0), v2(10, 2);
+MyVector v1, v2(10, 2);
 v1.show();
 v2.show();
 }
