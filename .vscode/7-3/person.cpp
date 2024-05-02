@@ -5,9 +5,9 @@ class Person {
     string name;
 public:   
     Person() { name = ""; }    
-    Person(string name) { this->name = name; }    
-    string getName() { return name; }   
-    void setName(string name) { this->name = name; }    
+    Person(const string &name) { this->name = name; }    
+    const string &getName() const { return name; }   
+    void setName(const string &name) { this->name = name; }    
 };
 
 class Family {
@@ -15,23 +15,23 @@ class Family {
     Person* p;   
     int size;  
 public:   
-    Family(string name, int size);  
-    void setName(int index, string name);
-    void show();    
+    Family(const string &name, int size);  
+    void setName(int index, const string &name);
+    void show() const;    
     ~Family();  
 };
 
-Family::Family(string name, int size) {    
+Family::Family(const string &name, int size) {    
     p = new Person[size];   
     this->size = size;   
     this->name = name;  
 }
 
-void Family::setName(int index, string name) {   
+void Family::setName(int index, const string &name) {   
     p[index].setName(name);
 }
 
-void Family::show() {   
+void Family::show() const{   
     cout << name << "가족은 다음과 같이 " << size << "명 입니다.\n";    
     for (int i = 0; i < size; i++) {   
         cout << p[i].getName() << "\t";

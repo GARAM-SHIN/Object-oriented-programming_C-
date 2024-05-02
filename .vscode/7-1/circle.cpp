@@ -4,33 +4,27 @@ using namespace std;
 class Circle {
     int radius;   
 public:
-    void setRadius(int r);   
-    double getArea();    
+    void setRadius(int radius);   
+    double getArea() const;    
 };
 
-void Circle::setRadius(int r) {    
-    radius=r;
+void Circle::setRadius(int radius) {    
+    this->radius=radius;
 }
 
-double Circle::getArea() {   
+double Circle::getArea() const {   
     return radius * radius * 3.14;
 }
 
 int main() {
-    int r, count=0;   
-    Circle *pcArray = new Circle[3];   
-
-    for (int i = 0; i < 3; i++)
-    {
-        cout << "원 " << i+1 << "의 반지름 >>";
-        cin >> r;    
-        pcArray[i].setRadius(r);   
-        if (pcArray[i].getArea() > 100)    
-        {
-            count++;
-        }
+    Circle circle[3];
+    int count = 0; 
+    for (int i = 0; i < 3; ++i) {
+        cout << "원 " << i + 1 << "의 반지름 값 >> ";
+        int r;
+        cin >> r;
+        circle[i].setRadius(r);
+        if (circle[i].getArea() > 100) ++count;
     }
-
-    cout << "면적이 100보다 큰 원" << count << "개입니다.";
-    delete pcArray;   
+    cout << "면적이 100보다 큰 원은 " << count << "개 입니다." << endl;
 }
