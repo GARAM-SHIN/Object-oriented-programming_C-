@@ -1,6 +1,6 @@
+#include "book.h"
 #include<iostream>
 #include<cstring>
-#include "book.h"
 using namespace std; 
 
 int main() {
