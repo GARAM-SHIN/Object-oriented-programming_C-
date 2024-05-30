@@ -1,13 +1,17 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "List.h"
+#include "List.h" 
 
-class Queue : public List {
+class Queue {
+private:
+    List list; 
+
 public:
-    Queue();
+    Queue(); 
     void enqueue(int value);
-    int dequeue();
+    int dequeue(); 
+    bool empty() const; 
 };
 
-#endif
+#endif 

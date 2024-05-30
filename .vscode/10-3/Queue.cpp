@@ -1,11 +1,17 @@
 #include "Queue.h"
 
-Queue::Queue() : List() {}
+Queue::Queue() {
+    
+}
 
 void Queue::enqueue(int value) {
-    pushBack(value);
+    list.pushBack(value); 
 }
 
 int Queue::dequeue() {
-    return popFront();
+    return list.popFront(); 
+}
+
+bool Queue::empty() const {
+    return list.length() == 0; 
 }
